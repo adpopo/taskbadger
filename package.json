@@ -16,5 +16,10 @@
   "bugs": {
     "url": "https://github.com/adpopo/taskbadger/issues"
   },
-  "homepage": "https://github.com/adpopo/taskbadger#readme"
+  "homepage": "https://github.com/adpopo/taskbadger#readme",
+  "dependencies": {
+    "express-handlebars": "^3.0.0",
+    "passport-local": "^1.0.0",
+    "sequelize": "^3.30.4"
+  }
 }
