@@ -1,0 +1,17 @@
+ideas for syncing up the harassment engine
+
+server starts- runs function
+
+function - checks time, searches database, harasses people
+    use moment to check time, call modulus and use difference to set timer
+    
+    when timer hits 0 - check database for timestamp
+        if timestamp for task matches current time
+            add task to array or something
+            
+        get all the tasks for current time and message everyone of note
+        
+        recursion call of function
+        
+        
+        npm node-schedule
