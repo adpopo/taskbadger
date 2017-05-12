@@ -10,5 +10,8 @@ var Task = function(t_id, task, deadline, hourly, weekly, u_id, f_key) {
 	this.f_key = f_key
 };
 
+module.exports = function(sequelize, DataTypes) {
+  var User = sequelize.define("User", {
+
 
 module.exports = Task;

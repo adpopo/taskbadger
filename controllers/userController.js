@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var burger = require('../models/task.js');
+var User = require('../models');
 
 
 router.get('/', function (req, res) {
@@ -10,8 +10,8 @@ router.get('/', function (req, res) {
 
 
 router.get('/index', function (req, res) {
-  burger.selectAll(function(data) {
-    var hbsObject = { burgers: data };
+  User.user.selectAll(function(data) {
+    var hbsObject = { hbsObject: data };
 
 
     res.render('index', hbsObject);
@@ -21,7 +21,7 @@ router.get('/index', function (req, res) {
 
 
 router.post('/task/create', function (req, res) {
-  burger.insertOne(req.body.burger_name, function() {
+  User.user.insertOne(req.body.burger_name, function() {
     res.redirect('/index');
   });
 });
@@ -30,7 +30,7 @@ router.post('/task/create', function (req, res) {
 
 
 router.post('/task/complete/:id', function (req, res) {
-  burger.updateOne(req.params.id, function() {
+  User.user.updateOne(req.params.id, function() {
     res.redirect('/index');
   });
 });

@@ -7,7 +7,7 @@ module.exports = function(app, passport) {
 	// =====================================
 	// show the login form
 	app.get('/login', function(req, res) {
-		db.login.findAll({}).then(function(login) {
+		db.user.findAll({}).then(function(login) {
 		// render the page
 			res.json(login);
 		}
@@ -25,7 +25,7 @@ module.exports = function(app, passport) {
 	// =====================================
 	// show the signup form
 	app.get('/signup', function(req, res) {
-		db.login.findAll({}).then(function(login) {
+		db.user.findAll({}).then(function(login) {
 			res.render(signup});
 		}
 	});

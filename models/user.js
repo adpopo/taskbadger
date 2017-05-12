@@ -3,7 +3,7 @@
 var bcrypt = require('bcrypt-nodejs');
 
 module.exports = function(sequelize, DataTypes) {
-  var Login = sequelize.define("User", {
+  var User = sequelize.define("User", {
     local: {
         name:  {
             type: DataTypes.STRING,
@@ -41,5 +41,5 @@ module.exports = function(sequelize, DataTypes) {
         return bcrypt.compareSync(password, this.local.password);
     }
   };
-  return Login;
+  return User;
 });
