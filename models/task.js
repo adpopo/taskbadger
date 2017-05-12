@@ -20,6 +20,10 @@ module.exports = function(sequelize, DataTypes) {
         type: DataTypes.BOOLEAN,
         defaultValue: false
         },
+    complete:  {
+        type: DataTypes.BOOLEAN,
+        defaultValue: false
+        },
     u_id:   {
     	type: DataTypes.INTEGER,
     	allowNull: false

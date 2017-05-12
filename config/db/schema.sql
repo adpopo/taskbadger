@@ -18,6 +18,7 @@ CREATE TABLE tasks(
 `hourly` BOOLEAN default false,
 `daily` BOOLEAN default false,
 `weekly` BOOLEAN default false,
+`complete` BOOLEAN default false,
 `u_id` INT(144) default null, 
  FOREIGN KEY (u_id) references users (u_id) ON UPDATE CASCADE ON DELETE CASCADE,
 date TIMESTAMP)ENGINE = InnoDB;
