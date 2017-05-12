@@ -6,12 +6,10 @@ USE taskbadger;
 
 CREATE TABLE users(
 `u_id` INT(144) AUTO_INCREMENT PRIMARY KEY,
-`first_name` VARCHAR(50) not null,
-`last_name` VARCHAR(50) not null,
+`name` VARCHAR(50) not null,
 `password` VARCHAR(50) not null,
 `email` VARCHAR(50) not null,
-`phone_number` INTEGER(10) not null,
-date TIMESTAMP)ENGINE = InnoDB;
+`phone_number` INTEGER(10) not null;
 
 CREATE TABLE tasks(
 `t_id` INT(144) AUTO_INCREMENT PRIMARY KEY,

@@ -1,13 +1,45 @@
-var user = function(phone_number, first_name, last_name, password, email, phone_number, f_key) {
+// app/models/user.js
+// load the things we need
+var bcrypt = require('bcrypt-nodejs');
 
-	this.phone_number = phone_number;
-	this.first_name = first_name;
-	this.last_name = last_name;
-	this.password = password;
-	this.email = email;
-	this.phone_number = phone_number;
-	this.f_key = f_key
-};
+module.exports = function(sequelize, DataTypes) {
+  var Login = sequelize.define("User", {
+    local: {
+        name:  {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+              len: [1, 140]
+            }},
+        last_name:  {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+              len: [1, 140]
+            }},
+        password:  {
+            type: DataTypes.STRING,
+            allowNull: false,
+            }
+        },
+        email:  {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+              len: [1, 140]
+            }},
+        phone_number:  {
+            type: DataTypes.INT,
+            allowNull: false,
+            }
+    },
+    generateHash: function(password) {
+        return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);
+    },
 
-
-module.exports = user;
+    validPassword: function(password) {
+        return bcrypt.compareSync(password, this.local.password);
+    }
+  };
+  return Login;
+});
