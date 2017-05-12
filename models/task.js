@@ -1,17 +1,29 @@
-
-var Task = function(t_id, task, deadline, hourly, weekly, u_id, f_key) {
-
-	this.t_id = t_id;
-	this.task = task;
-	this.deadline = deadline;
-	this.hourly = hourly;
-	this.weekly = weekly;
-	this.u_id = u_id;
-	this.f_key = f_key
-};
-
 module.exports = function(sequelize, DataTypes) {
-  var User = sequelize.define("User", {
-
-
-module.exports = Task;
+  var Task = sequelize.define("Task", {
+  	task:  {
+        type: DataTypes.STRING,
+        allowNull: false
+        },
+    deadline:  {
+        type: DataTypes.STRING,
+        allowNull: false
+        },
+    hourly:  {
+        type: DataTypes.BOOLEAN,
+        defaultValue: false
+        },
+    daily:  {
+        type: DataTypes.BOOLEAN,
+        defaultValue: false
+        },
+    weekly:  {
+        type: DataTypes.BOOLEAN,
+        defaultValue: false
+        },
+    u_id:   {
+    	type: DataTypes.INTEGER,
+    	allowNull: false
+    }
+  };
+  return Task;
+});
