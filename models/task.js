@@ -28,6 +28,6 @@ module.exports = function(sequelize, DataTypes) {
     	type: DataTypes.INTEGER,
     	allowNull: false
     }
-  };
+  })
   return Task;
-});
+};

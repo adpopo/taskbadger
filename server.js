@@ -10,19 +10,21 @@ const sms = require('./controllers/smsController.js');
 const mysql = require('mysql');
 const schedule = require('node-schedule');
 const moment = require('moment');
+const route = require('./routes/routes.js');
+const loginRoutes = require('./routes/loginRoutes.js');
 
 // setting up express server
 const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(session({  
-  store: new RedisStore({
-    url: config.redisStore.url
-  }),
-  secret: config.redisStore.secret,
-  resave: false,
-  saveUninitialized: false
-}));
+// app.use(session({  
+//   store: new RedisStore({
+//     url: config.redisStore.url
+//   }),
+//   secret: config.redisStore.secret,
+//   resave: false,
+//   saveUninitialized: false
+// }));
 
 // connecting to server
 app.use(passport.initialize()); 
@@ -42,11 +44,14 @@ var connection = mysql.createConnection({
   database: "taskBadger"
 });
 
+app.use(route);
+app.use(loginRoutes);
+
 // connecting to database 
-connection.connect(function(err) {
-  if (err) throw err;
-  console.log("connected as id " + connection.threadId);
-});
+// connection.connect(function(err) {
+//   if (err) throw err;
+//   console.log("connected as id " + connection.threadId);
+// });
 
 // badger function to send text messages to users
 function badger(phone_number, message) {
