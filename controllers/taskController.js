@@ -11,7 +11,7 @@ router.get('/', function (req, res) {
 
 router.get('/index', function (req, res) {
   Task.task.selectAll(function(data) {
-    var hbsObject = { burgers: data };
+    var hbsObject = { taskBadger: data };
 
 
     res.render('index', hbsObject);
@@ -21,7 +21,7 @@ router.get('/index', function (req, res) {
 
 
 router.post('/task/create', function (req, res) {
-  Task.task.insertOne(req.body.burger_name, function() {
+  Task.task.insertOne(req.body.name, function() {
     res.redirect('/index');
   });
 });

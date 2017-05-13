@@ -19,10 +19,12 @@
   "homepage": "https://github.com/adpopo/taskbadger#readme",
   "dependencies": {
     "connect-redis": "^3.3.0",
+    "dotenv": "^4.0.0",
     "express-handlebars": "^3.0.0",
     "express-session": "^1.15.2",
     "moment": "^2.18.1",
     "mysql": "^2.13.0",
+    "nexmo": "^2.0.2",
     "node-schedule": "^1.2.1",
     "passport-local": "^1.0.0",
     "sequelize": "^3.30.4"

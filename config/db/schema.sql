@@ -1,6 +1,6 @@
 CREATE DATABASE taskBadger;
 
-USE taskbadger;
+USE taskBadger;
 
 
 

@@ -39,7 +39,7 @@ var connection = mysql.createConnection({
   user: "",
   // Your password
   password: "",
-  database: "taskbadger"
+  database: "taskBadger"
 });
 
 // connecting to database 
