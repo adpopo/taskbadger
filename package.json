@@ -19,6 +19,7 @@
   "homepage": "https://github.com/adpopo/taskbadger#readme",
   "dependencies": {
     "express-handlebars": "^3.0.0",
+    "moment": "^2.18.1",
     "node-schedule": "^1.2.1",
     "passport-local": "^1.0.0",
     "sequelize": "^3.30.4"
